@@ -49,13 +49,15 @@ const Countdown = ({ setIsStarted }) => {
     <div
       style={{
         color: "red",
+        fontWeight: matchesXS ? "400" : "600",
+        letterSpacing: matchesXS ? "1px" : "2px",
         fontSize: matchesXS
           ? "12px"
           : matchesSM
           ? "14px"
           : matchesMD
-          ? "18px"
-          : "20px",
+          ? "20px"
+          : "22px",
       }}
     >
       {counter === 0 ? (
@@ -69,11 +71,20 @@ const Countdown = ({ setIsStarted }) => {
               : matchesSM
               ? "14px"
               : matchesMD
-              ? "18px"
-              : "20px",
+              ? "20px"
+              : "22px",
           }}
         >
-          Timer: {format(counter)}
+          <span
+            style={{
+              fontWeight: "600",
+              letterSpacing: "2px",
+            }}
+          >
+            {" "}
+            Timer:
+          </span>{" "}
+          {format(counter)}
         </div>
       )}
     </div>

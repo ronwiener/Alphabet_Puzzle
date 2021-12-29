@@ -67,6 +67,14 @@ function Board1(props) {
       alignItems="center"
       justifyContent="flex-end"
     >
+      <Grid container justifyContent="center">
+        <Grid item style={{ paddingTop: "10px" }}>
+          {isStarted || gameOver ? (
+            <Countdown setIsStarted={setIsStarted} />
+          ) : null}
+        </Grid>
+      </Grid>
+
       <Grid item>
         <ul style={style} className="board">
           {tiles.map((tile, index) => (
@@ -143,13 +151,6 @@ function Board1(props) {
           >
             RESET
           </Button>
-        </Grid>
-        <Grid container justifyContent="center">
-          <Grid item>
-            {isStarted || gameOver ? (
-              <Countdown setIsStarted={setIsStarted} />
-            ) : null}
-          </Grid>
         </Grid>
       </Grid>
     </Grid>
