@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import Header1 from "./Components/Header1";
 import Grid from "@mui/material/Grid";
 import Board1 from "./Components/Board1";
-//import "./Game.css";
+
 import { Letters } from "./Assets/Letters";
 import { Neon } from "./Assets/NeonLetters";
+import { useTheme } from "@mui/material/styles";
+import useMediaQuery from "@mui/material/useMediaQuery";
 //Credits to: Barely Coding with Daniel Bark
 
 function App1() {
@@ -14,11 +16,22 @@ function App1() {
 
   const [selected, setSelected] = useState(images.arch);
 
+  const theme = useTheme();
+  const matchesMD = useMediaQuery(theme.breakpoints.down("md"));
+  const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
+  const matchesXS = useMediaQuery(theme.breakpoints.down("xs"));
+
   return (
-    <Grid container xs={12} justifyContent="center">
+    <Grid container justifyContent="center">
       <Header1 images={images} setSelected={setSelected} />
 
-      <Board1 rows={5} cols={6} width={500} height={700} images={selected} />
+      <Board1
+        rows={5}
+        cols={6}
+        width={matchesXS ? 250 : matchesSM ? 300 : matchesMD ? 500 : 520}
+        height={matchesXS ? 350 : matchesSM ? 420 : matchesMD ? 700 : 728}
+        images={selected}
+      />
     </Grid>
   );
 }

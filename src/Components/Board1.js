@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import Tile from "./Tile";
 import Countdown from "./Countdown";
+import { useTheme } from "@mui/material/styles";
+import useMediaQuery from "@mui/material/useMediaQuery";
 import Grid from "@mui/material/Grid";
 import Button from "@mui/material/Button";
 import { canSwap, swap, shuffle, isSolved } from "../Helpers/Helper";
@@ -8,6 +10,11 @@ import "../Styles/Game.css";
 
 function Board1(props) {
   const { rows, cols, width, height, images } = props;
+  const theme = useTheme();
+  const matchesMD = useMediaQuery(theme.breakpoints.down("md"));
+  const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
+  const matchesXS = useMediaQuery(theme.breakpoints.down("xs"));
+
   const [tiles, setTiles] = useState([...Array(rows * cols).keys()]);
   const [isStarted, setIsStarted] = useState(false);
   const [gameOver, setGameOver] = useState(false);
@@ -90,12 +97,50 @@ function Board1(props) {
 
       <Grid container direction="row" justifyContent="center">
         <Grid item>
-          <Button variant="text" onClick={handleStartButton}>
+          <Button
+            variant="text"
+            style={{
+              fontSize: matchesXS
+                ? "10px"
+                : matchesSM
+                ? "12px"
+                : matchesMD
+                ? "18px"
+                : "18px",
+              marginRight: matchesXS
+                ? "5px"
+                : matchesSM
+                ? "20px"
+                : matchesMD
+                ? "40px"
+                : "40px",
+            }}
+            onClick={handleStartButton}
+          >
             {!isStarted || solved ? "START" : "Re-Scramble"}
           </Button>
         </Grid>
         <Grid item>
-          <Button variant="text" onClick={handleResetButton}>
+          <Button
+            variant="text"
+            style={{
+              fontSize: matchesXS
+                ? "10px"
+                : matchesSM
+                ? "12px"
+                : matchesMD
+                ? "18px"
+                : "18px",
+              marginLeft: matchesXS
+                ? "5px"
+                : matchesSM
+                ? "20px"
+                : matchesMD
+                ? "40px"
+                : "40px",
+            }}
+            onClick={handleResetButton}
+          >
             RESET
           </Button>
         </Grid>

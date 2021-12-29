@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { useTheme } from "@mui/material/styles";
+import useMediaQuery from "@mui/material/useMediaQuery";
 import "../Styles/Game.css";
 
 const padTime = (time) => {
@@ -17,7 +19,11 @@ const format = (time) => {
 };
 
 const Countdown = ({ setIsStarted }) => {
-  const [counter, setCounter] = useState(5);
+  const theme = useTheme();
+  const matchesMD = useMediaQuery(theme.breakpoints.down("md"));
+  const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
+  const matchesXS = useMediaQuery(theme.breakpoints.down("xs"));
+  const [counter, setCounter] = useState(15);
   const [gameOver, setGameOver] = useState("");
 
   let gameMessage = "Game Over, Try Again";
@@ -40,11 +46,35 @@ const Countdown = ({ setIsStarted }) => {
   }, [counter, setIsStarted, setGameOver]);
 
   return (
-    <div>
+    <div
+      style={{
+        color: "red",
+        fontSize: matchesXS
+          ? "12px"
+          : matchesSM
+          ? "14px"
+          : matchesMD
+          ? "18px"
+          : "20px",
+      }}
+    >
       {counter === 0 ? (
         gameMessage
       ) : (
-        <div style={{ color: "white" }}>Timer: {format(counter)}</div>
+        <div
+          style={{
+            color: "white",
+            fontSize: matchesXS
+              ? "12px"
+              : matchesSM
+              ? "14px"
+              : matchesMD
+              ? "18px"
+              : "20px",
+          }}
+        >
+          Timer: {format(counter)}
+        </div>
       )}
     </div>
   );

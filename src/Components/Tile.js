@@ -18,8 +18,6 @@ function Tile(props) {
     width: `calc(75% / ${rows})`,
     height: `calc(100% / ${cols})`,
     backgroundImage: `url(${image})`,
-    //backgroundRepeat: "no-repeat",
-    //backgroundSize: `100%`,
     backgroundSize: "cover",
   };
   return (
