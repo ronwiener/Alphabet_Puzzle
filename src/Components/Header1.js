@@ -137,23 +137,21 @@ const Header1 = ({ images, setSelected }) => {
                   <ul>
                     <li>
                       Click on <b>ARCHITECTURAL</b> or <b>NEON</b> to select
-                      letters
+                      letters.
                     </li>
                     <li>
-                      Click <b>START</b> to scramble letters and begin countdown
-                      timer
+                      Click <b>START</b> to scramble letters and begin the game
+                      timer.
                     </li>
                     <li>
-                      Click on a letter to move it to the available open space
+                      Click on a letter to move it to the available open space.
                     </li>
                     <li>
-                      Position the letters back to their original places before
-                      the timer gets to 0
+                      To win, position the letters back to their original
+                      places. The letters must be in the exact order as they
+                      appeared at the start.
                     </li>
-                    <li>
-                      To win, the letters must be in the exact order as they
-                      appeared at the start
-                    </li>
+                    <li>Try to beat your best time in the next game!</li>
                   </ul>
                 </Typography>
               </Box>

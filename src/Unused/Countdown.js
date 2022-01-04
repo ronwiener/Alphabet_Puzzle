@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import "../Styles/Game.css";
@@ -23,12 +23,12 @@ const Countdown = ({ setIsStarted }) => {
   const matchesMD = useMediaQuery(theme.breakpoints.down("md"));
   const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
   const matchesXS = useMediaQuery(theme.breakpoints.down("xs"));
-  const [counter, setCounter] = useState(15);
+  const [counter, setCounter] = useState(10);
   const [gameOver, setGameOver] = useState("");
 
   let gameMessage = "Game Over, Try Again";
 
-  React.useEffect(() => {
+  useEffect(() => {
     let timer;
     if (counter > 0) {
       timer = setTimeout(() => setCounter((c) => c - 1), 1000);
@@ -81,9 +81,8 @@ const Countdown = ({ setIsStarted }) => {
               letterSpacing: "2px",
             }}
           >
-            {" "}
-            Timer:
-          </span>{" "}
+            Time:
+          </span>
           {format(counter)}
         </div>
       )}

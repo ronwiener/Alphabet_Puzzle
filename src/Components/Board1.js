@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Tile from "./Tile";
-import Countdown from "./Countdown";
+import Countup from "./Countup";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import Grid from "@mui/material/Grid";
@@ -70,7 +70,7 @@ function Board1(props) {
       <Grid container justifyContent="center">
         <Grid item style={{ paddingTop: "10px" }}>
           {isStarted || gameOver ? (
-            <Countdown setIsStarted={setIsStarted} />
+            <Countup setIsStarted={setIsStarted} solved={solved} />
           ) : null}
         </Grid>
       </Grid>
@@ -91,17 +91,6 @@ function Board1(props) {
           ))}
         </ul>
       </Grid>
-
-      <div>
-        {solved && isStarted ? (
-          <div>
-            <span id="neon-orange">Puzzle </span>
-            <span id="neon-blue">Solved!!</span>
-          </div>
-        ) : (
-          " "
-        )}
-      </div>
 
       <Grid container direction="row" justifyContent="center">
         <Grid item>
@@ -125,7 +114,7 @@ function Board1(props) {
             }}
             onClick={handleStartButton}
           >
-            {!isStarted || solved ? "START" : "Re-Scramble"}
+            {!isStarted || solved ? "START" : null}
           </Button>
         </Grid>
         <Grid item>

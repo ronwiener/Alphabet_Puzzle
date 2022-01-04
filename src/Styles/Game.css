@@ -66,7 +66,7 @@ code {
 #neon-orange {
   font-family: neon;
   color: #fb4264;
-  font-size: 30px;
+  font-size: 20px;
   text-shadow: 0 0 1vw #f40a35;
   animation: neon-orange 1s ease infinite;
   -moz-animation: neon-orange 1s ease infinite;
@@ -75,7 +75,7 @@ code {
 #neon-blue {
   font-family: neon;
   color: #426dfb;
-  font-size: 30px;
+  font-size: 20px;
   text-shadow: 0 0 1vw #2356ff;
   animation: neon-blue 2s linear infinite;
   -moz-animation: neon-blue 2s linear infinite;
