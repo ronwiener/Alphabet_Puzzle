@@ -29,7 +29,7 @@ function App1() {
         rows={5}
         cols={6}
         width={matchesXS ? 250 : matchesSM ? 275 : matchesMD ? 450 : 500}
-        height={matchesXS ? 350 : matchesSM ? 385 : matchesMD ? 630 : 700}
+        height={matchesXS ? 360 : matchesSM ? 400 : matchesMD ? 630 : 700}
         images={selected}
       />
     </Grid>
