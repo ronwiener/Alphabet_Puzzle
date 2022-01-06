@@ -28,8 +28,8 @@ function App1() {
       <Board1
         rows={5}
         cols={6}
-        width={matchesXS ? 250 : matchesSM ? 300 : matchesMD ? 500 : 520}
-        height={matchesXS ? 350 : matchesSM ? 420 : matchesMD ? 700 : 728}
+        width={matchesXS ? 225 : matchesSM ? 250 : matchesMD ? 350 : 500}
+        height={matchesXS ? 315 : matchesSM ? 350 : matchesMD ? 490 : 700}
         images={selected}
       />
     </Grid>

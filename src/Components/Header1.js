@@ -46,7 +46,13 @@ const Header1 = ({ images, setSelected }) => {
                   : matchesMD
                   ? "22px"
                   : "28px",
-                marginLeft: matchesSM ? "10px" : matchesMD ? "20px" : "25px",
+                marginLeft: matchesXS
+                  ? "7px"
+                  : matchesSM
+                  ? "10px"
+                  : matchesMD
+                  ? "20px"
+                  : "25px",
               }}
             >
               A to Z Sliding Puzzle
