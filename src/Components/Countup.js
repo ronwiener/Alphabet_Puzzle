@@ -8,7 +8,6 @@ const Countup = ({ setIsStarted, solved }) => {
   const matchesMD = useMediaQuery(theme.breakpoints.down("md"));
   const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
   const matchesXS = useMediaQuery(theme.breakpoints.down("xs"));
-  const [gameOver, setGameOver] = useState("");
   const [second, setSecond] = useState("00");
   const [minute, setMinute] = useState("00");
   const [isActive, setIsActive] = useState(true);
@@ -39,13 +38,12 @@ const Countup = ({ setIsStarted, solved }) => {
       }, 1000);
     }
     if (solved) {
-      //setGameOver((gameMessage) => gameMessage);
       setIsStarted(false);
       setIsActive(false);
     }
 
     return () => clearInterval(timer);
-  }, [isActive, counter, setIsStarted, setGameOver, solved, setIsActive]);
+  }, [isActive, counter, setIsStarted, solved, setIsActive]);
 
   return (
     <div
