@@ -33,7 +33,7 @@ const Header1 = ({ images, setSelected }) => {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
-        <Container maxWidth="xl">
+        <Container>
           <Toolbar disableGutters>
             <Typography
               component="div"
