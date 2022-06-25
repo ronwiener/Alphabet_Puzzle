@@ -142,15 +142,15 @@ const Header1 = ({ images, setSelected }) => {
                 >
                   <ul>
                     <li>
-                      Click on <b>ARCHITECTURAL</b> or <b>NEON</b> to select
+                      Tap on <b>ARCHITECTURAL</b> or <b>NEON</b> to select
                       letters.
                     </li>
                     <li>
-                      Click <b>START</b> to scramble letters and begin the game
+                      Tap <b>START</b> to scramble letters and begin the game
                       timer.
                     </li>
                     <li>
-                      Click on a letter to move it to the available open space.
+                      Tap on a letter to move it to the available open space.
                     </li>
                     <li>
                       To win, position the letters back to their original
