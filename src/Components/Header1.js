@@ -142,8 +142,7 @@ const Header1 = ({ images, setSelected }) => {
                 >
                   <ul>
                     <li>
-                      Tap on <b>ARCHITECTURAL</b> or <b>NEON</b> to select
-                      letters.
+                      Tap on <b>URBAN</b> or <b>NEON</b> to select letters.
                     </li>
                     <li>
                       Tap <b>START</b> to scramble letters and begin the game
